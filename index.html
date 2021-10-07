@@ -6,7 +6,7 @@
     You will use the Bootstrap components for the elements of your app.
 
     The features are the following:
-    - The user should be able to add a list of names, find a way to get the user input and fill a list with the new name.
+    - The user should be able to add a list of names, find a way to get the user input id="input-name" and fill a list with the new name.
     - The user should be able to set the number of teams he wants, so that they will be generated. A team is just another list to be displayed.
     - An "Assign" button will be required in order to launch the team generation functionality.
     - Every time the user clicks on the "Assign" button, a random name is placed in a team and removed from the initial list.
@@ -32,31 +32,29 @@
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <input type="text" placeholder="Enter a name " id="addName" class="rounded bg-primary">
-                <button type="sumbit" class="btn btn-warning rounded-pill mb-1 ml-2">Enter a name</button>
+                <input id="input-name" type="text" placeholder="Enter a name "  id="addName" class="rounded bg-primary">
+                <button onclick="press()" type="sumbit" class="btn btn-warning rounded-pill mb-1 ml-2">Enter a name</button>
             </div>
             <div class="col-6">
-                <input type="text" placeholder="Enter a number of teams" class="rounded bg-primary">
-                <button type="sumbit" class="btn btn-warning rounded-pill mb-1 ml-2">Create a name</button>
+                <input id="inputNumber" type="text" placeholder="Enter a number of teams" class="rounded bg-primary">
+                <button onclick="addTeam()" type="sumbit" class="btn btn-warning rounded-pill mb-1 ml-2">Create a name</button>
             </div>
         </div>
     </div>
+    <div class="col-12 my-5">
+        <div id="teams-row" class="row">
+
+        </div>
+
     <div class="container">
         <div class="row">
-            <div class="col-6 bg-red" >
-                Team 1
-            </div>
-            <div class="col-6">
-                Team 1
-            </div>
+            <ul id="name">
+            
+            </ul>
+
         </div>
     </div>
-    <!-- <div>
-        <button class="btn btn-primary" type="submit">Assign</button>
-    </div> -->
-
-
-
+    
 
 
 
