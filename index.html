@@ -36,22 +36,31 @@
                 <button onclick="press()" type="sumbit" class="btn btn-warning rounded-pill mb-1 ml-2">Enter a name</button>
             </div>
             <div class="col-6">
-                <input id="inputNumber" type="text" placeholder="Enter a number of teams" class="rounded bg-primary">
-                <button onclick="addTeam()" type="sumbit" class="btn btn-warning rounded-pill mb-1 ml-2">Create a name</button>
+                <input id="inputNumber" type="number" placeholder="Enter a number of teams" class="rounded bg-primary">
+                <button onclick="createTeams()" type="sumbit" class="btn btn-warning rounded-pill mb-1 ml-2">Create a team</button>
             </div>
         </div>
     </div>
-    <div class="col-12 my-5">
-        <div id="teams-row" class="row">
+    <div class="row mt-5 ml-5 mr-5 mb-5">
+        <div class="col-12 col-md-4 ml-5 pl-4">
+          <p class="bg-info text-light text-center"><strong>List of Members</strong></p>
+          <ul id="memberList" class="list-group">
+  
+          </ul>
+        </div>
+        <div id="numberOfTeam" class="col-12 col-md-4 ml-5 pl-10  ">
+          <p class="bg-info text-light text-center ml-5"><strong>Teams</strong></p>
 
         </div>
-
+      </div>
     <div class="container">
         <div class="row">
-            <ul id="name">
-            
-            </ul>
-
+            <div class="col-5  ml-5 pl-5 py-5 d-flex justify-content-center">
+                <button onclick="resetApp()" type="sumbit" class="btn btn-warning rounded-pill mb-1 ml-2"> Reset again </button>
+            </div>
+                <div class="col-5 ml-5 pl-5 py-5 d-flex justify-content-center">
+                    <button id="assignBtn" type ="submit"class="btn btn-warning rounded-pill mb-1 ml-2" onclick="assignTheMembers()">Click to Assign</button>
+                </div>
         </div>
     </div>
     

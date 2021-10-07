@@ -1,41 +1,59 @@
-let inputName = document.getElementById("input-name")
-let inputNumber = document.getElementById("input-number")
-function press(){
-let addName = document.getElementById('name')
-entry=document.createElement("li")
-entry.innerText = inputName.value
-addName.appendChild(entry)
-}
+// let inputName = document.getElementById("input-name")
+// let inputNumber = document.getElementById("input-number")
+// function press(){
+// let addName = document.getElementById('name')
+// entry=document.createElement("li")
+// entry.innerText = inputName.value
+// addName.appendChild(entry)
+// }
+let names = []
+const press = function(){
+ let inputName =document.getElementById("input-name")
+ names.push(inputName.value)
+ let listMember = document.getElementById("memberList")
+  let member = document.createElement("li")
+  member.classList.add("list-group-item")
+  member.innerText=inputName.value
+  listMember.appendChild(member)
+  inputName.value =""
+} 
 function createTeams() {
-    for (let i = 1  ; i < inputNumber.innerHTML; i++) {
-
-      // this is the template of a team, column, title + empty list (waiting for the names to be pushed inside)
-      teamsRow.innerHTML += `
-                      <div class="col-6 col-sm-3 team">
-                          <h4>Team ${i + 1}</h4>
-                          <ul class="list-group">
-                          </ul>
-                      </div>
-                  `
+    let inputNumber = document.getElementById("inputNumber")
+    let totalTeams = inputNumber.value
+    let teamContainer = document.getElementById("numberOfTeam")
+    let teamList =document.createElement('div')
+    teamList.classList.add('row')
+    teamContainer.appendChild(teamList)
+    for (let i = 0; i < totalTeams; i++) {
+        let individualTeamDiv = document.createElement('div')
+        individualTeamDiv.classList.add(`col-${ Math.floor(12 / totalTeams) }`)
+        teamList.appendChild(individualTeamDiv)
+        let teamName = document.createElement('p')
+        teamName.innerText = `Team ${ i + 1 }`
+        teamName.classList.add('teams')
+        teamName.classList.add('text-light')
+        individualTeamDiv.appendChild(teamName)
+        let teamList1 = document.createElement('ul')
+        teamList1.setAttribute('id', `team${ i + 1 }`)
+        teamList1.classList.add('list-group')
+        individualTeamDiv.appendChild(teamList1)
+        let removeButton = document.createElement('button')
+        removeButton.innerText = 'Remove Last Member'
+        removeButton.classList.add('btn-sm')
+        removeButton.classList.add('btn-danger')
+        removeButton.classList.add('mt-3')
+        removeButton.addEventListener('click', function () {
+            addedNames.push(teamList1.lastChild.innerText)
+            teamList1.removeChild(teamList1.lastChild)
+        })
+        individualTeamDiv.appendChild(removeButton)
     }
-  }
-  window.onload=function(){
-      createTeams()
-  }
-function addTeam() {
+}
 
-    const teamNumber = parseInt(inputNumber.innerHTML) + 1 // increases the current number for the team counter
 
-    inputNumber.innerHTML = teamNumber
+const resetApp = function () {
+    window.location.reload()
+}
 
-    // this creates a new team with the appropriate number in the title taken from the teamNumber reference
-    teamsRow.innerHTML += `
-                  <div class="col-6 col-sm-3 team">
-                      <h4>Team ${teamNumber}</h4>
-                      <ul class="list-group">
-                      </ul>
-                  </div>
-              `
-  }
 
  
