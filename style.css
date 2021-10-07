@@ -1,0 +1,13 @@
+
+.heading{
+    color:black;
+    font-weight:bold;
+    text-align: center;
+    margin: 10px;
+    margin-bottom: 30px;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+span{
+    color:orange
+}
